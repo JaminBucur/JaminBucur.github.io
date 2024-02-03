@@ -1,0 +1,67 @@
+header {
+    height: 20%;
+    background-color: #07394b;
+    background-size: contain;
+    color: white;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100px;
+}
+
+main {
+    height: 60%;
+    background-color: black;
+    color: white;
+   
+}
+#deals{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.image-caption{
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    font: bold 40px impact;
+}
+
+section {
+    height: 25%;
+    font: 20px sans-serif;
+}
+.dual-column {
+    width: 50%;
+    padding-left: 10%;
+}
+
+#dual-container {
+    height: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+    
+
+}
+footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 8%;
+    background-color: #595959;
+}
+
+a:link, a:visited {
+    color: white;
+    text-decoration: none;
+}
