@@ -1,4 +1,4 @@
-a:link {
+a:link, a:visited {
     color: rgb(255, 136, 0);
     background-color: transparent;
     text-decoration: none;
