@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Food and Drink Recommendations</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="blog.html">Home</a>
+            <h1>Welcome to our Campus Food Blog!</h1>
+            <a href="mealPlan.html" style="text-align: right;">Meal Plan</a>
+        </nav>
+
+    </header>
+    <div class="content-container">
+        <main>
+            <section>
+                <h2>Greetings and Salutations</h2>
+                <p>Welcome to my detailed guide on the best places to eat on the UNC Greensboro campus! Whether you're
+                    in the mood for a quick bite between classes or a sit-down meal with friends, our campus offers a
+                    variety of dining options to satisfy your cravings. From the savory dishes at Panda Express to the
+                    classic sandwiches at Subway, there's something for everyone. Not to mention, Chick-fil-a's famous
+                    chicken sandwiches are a must-try for any food lover. Join us as we explore the flavors and
+                    experiences these campus favorites have to offer.</p>
+            </section>
+            <article>
+                <h2>Our Recommendations</h2>
+                <div class="flex-container">
+                    <div>
+                        <h3>Panda Express</h3>
+                        <p>Panda Express is a well-known fast-food chain that specializes in serving American Chinese
+                            cuisine. One of their most popular dishes is the Orange Chicken, which features crispy
+                            chicken coated in a tangy and sweet sauce. Located in the Moran Commons to the left on the
+                            first floor, Panda Express is open from 11am to 9pm, Monday to Friday.</p>
+                        <p>In addition to the Orange Chicken, Panda Express also offers delicious options like Teriyaki
+                            Chicken and Honey Sesame Chicken Breast. These dishes are loved by many for their unique
+                            flavors and quality ingredients.</p>
+                        <p>With a commitment to providing tasty and convenient meals, Panda Express continues to be a
+                            favorite choice for those craving flavorful and satisfying food.</p>
+                        <img class="small" src="orangeChicken.jpg" alt="Dish 1" onclick="showDescription('dish1')">
+                        <img class="small" src="teriyakiChicken.jpg" alt="Dish 2" onclick="showDescription('dish2')">
+                        <img class="small" src="honeySesame.jpg" alt="Dish 3" onclick="showDescription('dish3')">
+                    </div>
+                    <div>
+                        <h3>Chick-fil-a</h3>
+                        <p>Chick-fil-a is a popular fast-food chain known for its delicious chicken sandwiches and
+                            waffle fries. With a focus on quality ingredients and exceptional customer service,
+                            Chick-fil-a has become a favorite among many for its tasty menu offerings and unique dining
+                            experience. Whether you're craving a classic Chick-fil-a Sandwich or looking to try their
+                            Spicy Chicken Deluxe, Chick-fil-a has something for everyone. They have a wide variety of
+                            sauces to add flavor to your meal. It's one of the cheapest places to eat on campus. Located
+                            on the lowest floor of the Elliott University Center, Chick-fil-a is open from 7:30am to
+                            10:30pm, Monday to Friday.</p>
+                        <img class="small" src="spicyChicken.jpg" alt="Dish 1" onclick="showDescription('dish4')">
+                        <img class="small" src="cobbSalad.jpg" alt="Dish 2" onclick="showDescription('dish5')">
+                        <img class="small" src="grilledClub.png" alt="Dish 3" onclick="showDescription('dish6')">
+                    </div>
+                    <div>
+                        <h3>Subway</h3>
+                        <p>Subway is a popular sandwich chain known for its fresh ingredients and customizable options.
+                            Whether you're looking for a classic sub or a wrap, Subway offers a variety of choices to
+                            suit your taste preferences. With a focus on providing healthy and delicious meals, Subway
+                            continues to be a go-to option for those seeking a quick and satisfying meal. The chain
+                            prides itself on its commitment to using quality ingredients and providing a wide range of
+                            options for customers with different dietary preferences. From freshly baked bread to a
+                            selection of meats, cheeses, and toppings, Subway allows customers to create their perfect
+                            sandwich or wrap. With a reputation for freshness and convenience, Subway remains a top
+                            choice for those looking for a quick and tasty meal on the go. Located at the gas station
+                            next to the Leonard J. Kaplan Center, Subway is open from 12am to 9pm all week.</p>
+                        <img class="small" src="grilledChicken.jpg" alt="Dish 1" onclick="showDescription('dish7')">
+                        <img class="small" src="steakCheese.jpg" alt="Dish 2" onclick="showDescription('dish8')">
+                        <img class="small" src="wraps.jpg" alt="Dish 3" onclick="showDescription('dish9')">
+                    </div>
+                </div>
+            </article>
+
+        </main>
+
+        <aside>
+            <h2>Selected Dish</h2>
+            <div id="dish-description" style="display: none;">
+            </div>
+        </aside>
+    </div>
+    <footer>
+        <p>Assignment 3 CSC 300x Jamin Bucur</p>
+    </footer>
+</body>
+
+</html>

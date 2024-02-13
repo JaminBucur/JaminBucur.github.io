@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Meal Plan</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="blog.html">Home</a>
+            <h1>Meal Plan Creator</h1>
+            <a href="mealPlan.html" style="text-align: right;">Meal Plan</a>
+        </nav>
+    </header>
+    <main class="flex-container">
+        <section id="recommendations" class="flex-container">
+            <div>
+                <h2>Recommendations</h2>
+                <div>
+                    <h3>Panda Express</h3>
+                    <div>
+                        <p>Orange Chicken - $5.99</p>
+                        <button class="add-button">Add</button>
+                        <button class="remove-button">Remove</button>
+                    </div>
+                    <div>
+                        <p>Teriyaki Chicken - $6.49</p>
+                        <button class="add-button">Add</button>
+                        <button class="remove-button">Remove</button>
+                    </div>
+                    <div>
+                        <p>Honey Sesame Chicken Breast - $6.99</p>
+                        <button class="add-button">Add</button>
+                        <button class="remove-button">Remove</button>
+                    </div>
+                </div>
+                <div>
+                    <h3>Chick-fil-a</h3>
+                    <div>
+                        <p>Spicy Chicken Sandwich Deluxe - $4.99</p>
+                        <button class="add-button">Add</button>
+                        <button class="remove-button">Remove</button>
+                    </div>
+                    <div>
+                        <p>Cobb Salad - $7.99</p>
+                        <button class="add-button">Add</button>
+                        <button class="remove-button">Remove</button>
+                    </div>
+                    <div>
+                        <p>Grilled Club Sandwich - $6.99</p>
+                        <button class="add-button">Add</button>
+                        <button class="remove-button">Remove</button>
+                    </div>
+                </div>
+                <div>
+                    <h3>Subway</h3>
+                    <div>
+                        <p>Grilled Chicken Sub - $5.99</p>
+                        <button class="add-button">Add</button>
+                        <button class="remove-button">Remove</button>
+                    </div>
+                    <div>
+                        <p>Steak and Cheese Sub - $6.49</p>
+                        <button class="add-button">Add</button>
+                        <button class="remove-button">Remove</button>
+                    </div>
+                    <div>
+                        <p>Subway Wraps - $4.99</p>
+                        <button class="add-button">Add</button>
+                        <button class="remove-button">Remove</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="meal-plan">
+            <h2>Your Meal Plan</h2>
+            <div id="selected-dishes">
+            </div>
+            <p>Total: $<span id="total-cost">0</span></p>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
