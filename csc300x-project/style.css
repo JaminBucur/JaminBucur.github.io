@@ -88,12 +88,12 @@ a:hover {
 }
 .sort {
     display: flex;
-    justify-content: flex-end; /* This will align the sorting feature to the right */
-    padding: 10px; /* Add padding to the sorting feature to create space between the sorting feature and the rest of the content */
+    justify-content: flex-end;
+    padding: 10px;
 }
 
 .sort select {
-    padding: 10px; /* Add padding to the select element to create space between the select element and the border */
+    padding: 10px;
 }
 
 .cart {
