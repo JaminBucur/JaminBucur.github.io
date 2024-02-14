@@ -9,14 +9,19 @@ nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 100px;
+}
+nav a {
+    padding: 10px;
 }
 
-main {
-    height: 60%;
+h1 {
     background-color: black;
     color: white;
    
+}
+.image-caption{
+    background-color: black;
+    color: white;
 }
 #deals{
     display: flex;
@@ -32,6 +37,11 @@ main {
 h1 {
     text-align: center;
     font: bold 40px impact;
+}
+h2 {
+    color: #07394b;
+    text-align: center;
+    font: bold 30px impact;
 }
 
 section {
@@ -64,4 +74,69 @@ footer {
 a:link, a:visited {
     color: white;
     text-decoration: none;
+}
+a:hover {
+    color: black;
+    text-decoration: underline;
+}
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    border: 10px solid #595959
+}
+.sort {
+    display: flex;
+    justify-content: flex-end; /* This will align the sorting feature to the right */
+    padding: 10px; /* Add padding to the sorting feature to create space between the sorting feature and the rest of the content */
+}
+
+.sort select {
+    padding: 10px; /* Add padding to the select element to create space between the select element and the border */
+}
+
+.cart {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border: 10px solid #07394b;
+}
+.small {
+    margin: 0 10px;
+    border: 1px solid black;
+    width: 72px;
+    height: 72px;
+}
+.medium {
+    margin: 0 10px;
+    border: 1px solid black;
+    width: 200px;
+    height: 200px;
+}
+.cart-total{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    border: 10px solid white;
+    padding: 10px;
+}
+.product-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 100px;
+}
+
+.product-details img {
+    width: 400px;
+    margin: 20px; 
+}
+
+.product-details .details {
+    padding: 20px;
+    min-height: 400px;
+    flex: 1; 
 }
