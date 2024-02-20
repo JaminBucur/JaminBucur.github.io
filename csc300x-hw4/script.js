@@ -11,14 +11,14 @@ function playerThrow(choice) {
         }
 
         let computerImage = document.getElementById('computer-choice');
-        computerImage.src = 'question-mark.png';
-        document.querySelector('#player-throw img[src="' + choice + '.png"]').classList.add('selected');
+        computerImage.src = 'question-mark.PNG';
+        document.querySelector('#player-throw img[src="' + choice + '.PNG"]').classList.add('selected');
         document.getElementById('outcome').innerText = 'Thinking...';
 
         setTimeout(function () {
             let computerChoice = ['rock', 'paper', 'scissors'][Math.floor(Math.random() * 3)];
             let computerImage = document.getElementById('computer-choice');
-            computerImage.src = computerChoice + '.png';
+            computerImage.src = computerChoice + '.PNG';
             computerImage.classList.add('computer-selected');
 
             if (choice === computerChoice) {
@@ -50,7 +50,7 @@ function resetGame() {
     playerScore = 0;
     computerScore = 0;
     tieScore = 0;
-    document.getElementById('computer-choice').src = 'question-mark.png';
+    document.getElementById('computer-choice').src = 'question-mark.PNG';
     document.getElementById('outcome').innerText = '';
     document.getElementById('score').innerText = '';
 
