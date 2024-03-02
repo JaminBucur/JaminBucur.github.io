@@ -10,6 +10,7 @@ nav {
     justify-content: space-around;
     align-items: center;
 }
+
 nav a {
     padding: 10px;
 }
@@ -17,27 +18,77 @@ nav a {
 h1 {
     background-color: black;
     color: white;
-   
-}
-.image-caption{
-    background-color: black;
-    color: white;
-}
-#deals{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-}
-.image-caption{
-    text-align: center;
-}
-
-h1 {
     text-align: center;
     font: bold 40px impact;
 }
+
+.image-caption {
+    background-color: black;
+    color: white;
+}
+
+#deals {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+
+}
+
+#deals img {
+    display: block;
+    margin: 0 auto;
+}
+
+.image-caption {
+    text-align: center;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+.deal {
+    display: none;
+    /* position: absolute; */
+    animation-fill-mode: forwards;
+}
+
+.deal.active {
+    display: block;
+    animation: slideIn 2s;
+    animation-fill-mode: forwards;
+}
+
+.deal.leaving {
+    display: block;
+    animation: slideOut 2s;
+    animation-fill-mode: forwards;
+}
+
+
+
+
 h2 {
     color: #07394b;
     text-align: center;
@@ -48,6 +99,7 @@ section {
     height: 25%;
     font: 20px sans-serif;
 }
+
 .dual-column {
     width: 50%;
     padding-left: 10%;
@@ -59,10 +111,11 @@ section {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    
-    
+
+
 
 }
+
 footer {
     display: flex;
     justify-content: space-around;
@@ -71,14 +124,17 @@ footer {
     background-color: #595959;
 }
 
-a:link, a:visited {
+a:link,
+a:visited {
     color: white;
     text-decoration: none;
 }
+
 a:hover {
     color: black;
     text-decoration: underline;
 }
+
 .product-list {
     display: flex;
     flex-wrap: wrap;
@@ -86,6 +142,7 @@ a:hover {
     align-items: center;
     border: 10px solid #595959
 }
+
 .sort {
     display: flex;
     justify-content: flex-end;
@@ -103,19 +160,22 @@ a:hover {
     align-items: center;
     border: 10px solid #07394b;
 }
+
 .small {
     margin: 0 10px;
     border: 1px solid black;
     width: 72px;
     height: 72px;
 }
+
 .medium {
     margin: 0 10px;
     border: 1px solid black;
     width: 200px;
     height: 200px;
 }
-.cart-total{
+
+.cart-total {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -123,6 +183,7 @@ a:hover {
     border: 10px solid white;
     padding: 10px;
 }
+
 .product-details {
     display: flex;
     justify-content: center;
@@ -132,11 +193,16 @@ a:hover {
 
 .product-details img {
     width: 400px;
-    margin: 20px; 
+    margin: 20px;
 }
 
 .product-details .details {
     padding: 20px;
     min-height: 400px;
-    flex: 1; 
+    flex: 1;
+}
+
+#saveEdits {
+    display: flex;
+    justify-content: right;
 }

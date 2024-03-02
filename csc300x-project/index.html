@@ -5,6 +5,7 @@
     <title>Big Body Protein & Supplements</title>
     <link rel="icon" type="image/x-icon" href="images/BBP_Logo.png">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 
 <body>
@@ -14,7 +15,7 @@
             <a href="index.html">Home</a>
             <a href="products.html">Products</a>
             <a href=#>About</a>
-            <a href="#">Login</a>
+            <a href="login.html">Login</a>
             <input type="text" placeholder="Search">
             <a href="#">
                 <img src="images/search.png" alt="search" width="20" style="margin-left: 1;">
@@ -27,31 +28,39 @@
 
     <main>
         <h1>Featured Deals</h1>
-        <div id="deals">
-            <div>
-                <a href="#">
-                    <img src="images/isolate.png" alt="protein isolate" width="600">
-                    <p class="image-caption">50% off Protein Isolate: <del>$59.99</del> $29.99 </p>
-                </a>
+            
+            <div id="deals">
+                <div id="leftButton">
+                <button onclick="changeDeal(-1)"><img src="images/previousDeal.png" width="100"></button>
             </div>
-
-            <div>
-                <a href="#">
-                    <img src="images/vitaminC.png" alt="vitamin C" width="600">
-                    <p class="image-caption">BOGO NatureMade Vitamin C </p>
-                </a>
+                <div class="deal">
+                    <a href="#">
+                        <img src="images/isolate.png" alt="protein isolate" width="600">
+                        <p class="image-caption">50% off Protein Isolate: <del>$59.99</del> $29.99 </p>
+                    </a>
+                </div>
+    
+                <div class="deal">
+                    <a href="#">
+                        <img src="images/vitaminC.png" alt="vitamin C" width="600">
+                        <p class="image-caption">BOGO NatureMade Vitamin C </p>
+                    </a>
+                </div>
+                <div class="deal">
+                    <img src="images/20.png" alt="20% off" width="600">
+                    <p class="image-caption">Get 20% off your order when use code MUSCLE2024 at checkout</p>
+                </div>
+                <div class="deal">
+                    <a href="#">
+                        <img src="images/bbpue.png" alt="bbpUE" width="600">
+                        <p class="image-caption">Sign up for BBP Ultra Elite to gain massive member-only bonuses</p>
+                    </a>
+                </div>
+                <div id="rightButton">
+                <button onclick="changeDeal(1)"><img src="images/nextDeal.png" width="100"></button>
             </div>
-            <div>
-                <img src="images/20.png" alt="20% off" width="600">
-                <p class="image-caption">Get 20% off your order when use code MUSCLE2024 at checkout</p>
             </div>
-            <div>
-                <a href="#">
-                    <img src="images/bbpue.png" alt="bbpUE" width="600">
-                    <p class="image-caption">Sign up for BBP Ultra Elite to gain massive member-only bonuses</p>
-                </a>
-            </div>
-        </div>
+            
 
     </main>
     <section>

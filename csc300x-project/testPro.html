@@ -21,8 +21,8 @@
             </a>
         </nav>
     </header>
-    <main>
-        <div class="product-details">
+    <main contenteditable="true">
+        <div class="product-details" >
             <img src="images/isolate.png" alt="protein isolate">
             <div class="details">
                 <h2>Big Body Protein Isolate</h2>
@@ -31,6 +31,8 @@
                 
                 <button>Add to Cart</button>
                 <p>Ingredients: Whey Protein Isolate, Natural and Artificial Flavors, Xanthan Gum, Sucralose, Acesulfame Potassium</p>
+                <label for="product-image">Change Image:</label>
+                <input type="file" id="product-image" name="product-image" accept="image/*" onchange="previewImage(event)"><br>
             </div>
         </div>
         <div class="product-details">
