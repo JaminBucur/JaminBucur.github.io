@@ -4,6 +4,7 @@
     <title>Big Body Protein & Supplements</title>
     <link rel="icon" type="image/x-icon" href="images/BBP_Logo.png">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
@@ -26,30 +27,32 @@
         <div class="cart">
             <img class="small" src="images/isolate.png" alt="Product Image">
             <h2>Product Name</h2>
-            <p>$Price</p>
-            <p>number of items</p>
-            <button>+</button>
-            <button>-</button>
+            <p>$10</p>
+           
+            <button class="remove">-</button>
+            <p class="quantity">0</p>
+            <button class="add">+</button>
         </div>
         <div class="cart">
-            <img class="small" src="images/product.jpg" alt="Product Image">
+            <img class="small" src="images/isolate.png" alt="Product Image">
             <h2>Product Name</h2>
-            <p>$Price</p>
-            <p>number of items</p>
+            <p>$20</p>
+
+            <button class="remove" >-</button>
+            <p class="quantity">0</p>
             <button class="add">+</button>
-            <button class="remove">-</button>
         </div>
         <!-- More cart items here -->
         <div class="cart-total">
-            <p>Subtotal: $Subtotal</p>
-            <p>Tax: $Tax</p>
-            <p>Delivery Fee: $15</p>
-            <p>Total: $Total</p>
+            <p id="subtotal">Subtotal: </p>
+            <p id="tax">Tax: </p>
+            <p id="delivery">Delivery Fee: </p>
+            <p id="total">Total: </p>
             <button>Checkout</button>
         </div>
     </main>
     <footer>
-        <pre>  Copyright  2024 BBP&T
+        <pre>  Copyright  2024 BBP&S
             Muscle Corp
     All rights reserved
               </pre>

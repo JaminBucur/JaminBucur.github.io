@@ -1,0 +1,74 @@
+#container {
+  display: flex;
+}
+
+#jokeText {
+  color: rgb(15, 160, 148);
+  font-size: 20px;
+}
+
+#responseText {
+  color: green;
+  font-size: 18px;
+}
+
+#jokeDisplay {
+  border: 2px solid black;
+  padding: 10px;
+  margin: 10px;
+  width: 50%;
+  text-align: center;
+}
+
+#addJokeForm {
+  border: 2px solid black;
+  padding: 10px;
+  margin: 10px;
+  width: 50%;
+  text-align: center;
+}
+
+#searchCategory{
+  text-align: right;
+}
+
+#categoryList{
+  padding: 10px;
+  margin: 20px;
+  width: 50%;
+  text-align: center;
+}
+
+#categoryList h2{
+  color: blue;
+  text-decoration: underline;
+}
+
+#categoryList h3:hover{
+  color: blue;
+}
+
+#jokesList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.jokeTile {
+  border: 2px solid black;
+  padding: 10px;
+  margin: 10px;
+  width: 45%; 
+  text-align: center;
+  box-sizing: border-box; 
+}
+
+.jokeText {
+  color: rgb(15, 160, 148);
+  font-size: 20px;
+}
+
+.responseText {
+  color: green;
+  font-size: 18px;
+}

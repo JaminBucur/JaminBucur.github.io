@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Jokebook</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <h1>Welcome to the Jokebook!</h1>
+    <div id="searchCategory">
+        <input type="text" id="categorySearchInput" placeholder="Enter category name">
+        <button id="searchCategoryButton">Search Jokes by Category</button>
+    </div>
+
+    <div id="container">
+        <div id="jokeDisplay">
+            <p id="jokeText"></p>
+            <p id="responseText"></p>
+        </div>
+        <div id="categoryList"></div>
+    </div>
+
+    <button id="randomJokeButton">Get Random Joke</button>
+    <button id="addJokeButton">Add a Joke</button>
+    <button id="jokeCategories">Categories</button>
+
+    <form id="addJokeForm">
+        <label for="jokeCategory">Select a Category</label>
+        <select id="jokeCategory">
+            <option value="funnyJoke">funnyJoke</option>
+            <option value="lameJoke">lameJoke</option>
+        </select><br>
+        <label for="jokeInput">Enter Joke:</label>
+        <input type="text" id="jokeInput" placeholder="Enter a joke"><br>
+        <label for="responseInput">Enter Response:</label>
+        <input type="text" id="responseInput" placeholder="Enter a response"><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <div id="jokesList"></div>
+</body>
+
+</html>
