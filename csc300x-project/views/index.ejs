@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Big Body Protein & Supplements</title>
+    <link rel="icon" type="image/x-icon" href="images/BBP_Logo.png">
+    <link rel="stylesheet" href="/public/style.css">
+    <script src="/public/script.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <%- include('partials/navbar') %>
+    </header>
+
+    <main>
+        <h1>Featured Deals</h1>
+        <div id="deals">
+            <div id="leftButton">
+                <button onclick="changeDeal(-1)"><img src="images/previousDeal.png" width="100"></button>
+            </div>
+            <% featured.forEach(function(product) { %>
+                <% const firstImage = product.image.split(',')[0].trim(); %>
+                <div class="deal">
+                    <a href="/products/<%= product.productID %>">
+                        <img src="images/<%= firstImage %>" alt="<%= product.productName %>" width="400" height="400">
+                        <p class="image-caption">
+                            <% if (product.discountValue > 0) { %>
+                                <% if (product.discountCaption) { %>
+                                    <%= product.productName %>: <%= product.discountCaption %>
+                                <% } else { %>
+                                    Save <%= product.discountValue * 100 %>%
+                                <% } %>: <del>$<%= product.price.toFixed(2) %></del> $<%= (product.price - product.discountValue * product.price).toFixed(2) %>
+                            <% } else { %>
+                                <%= product.productName + " $" + product.price.toFixed(2) %>
+                            <% } %>
+                        </p>
+                    </a>
+                </div>
+            <% }); %>
+
+            <div class="deal">
+                <img src="images/20.png" alt="20% off" width="600">
+                <p class="image-caption">Get 20% off your order when use code MUSCLE2024 at checkout</p>
+            </div>
+            <div class="deal">
+                <a href="/bbpue">
+                    <img src="images/bbpue.png" alt="bbpUE" width="600">
+                    <p class="image-caption">Sign up for BBP Ultra Elite to gain massive member-only bonuses</p>
+                </a>
+            </div>
+            <div id="rightButton">
+                <button onclick="changeDeal(1)"><img src="images/nextDeal.png" width="100"></button>
+            </div>
+        </div>
+    </main>
+    <section>
+        <h1>Why choose Big Body Protein & Supplements?</h1>
+        <div id="dual-container">
+            <div class="dual-column">
+                <p>Big Body Protein & Supplements is a company that sells protein and supplements. We have a wide
+                    range of
+                    products that will help you achieve your fitness goals. We have protein powders, protein bars,
+                    and other
+                    supplements to help you get the most out of your workouts. Our products are made with high
+                    quality
+                    ingredients and are designed to be easy on the stomach. Achieve the body you always wanted.
+                </p>
+            </div>
+            <div class="dual-column">
+                <img src="images/why.png" alt="why" width="300">
+            </div>
+        </div>
+    </section>
+    <footer>
+        <%- include('partials/footer') %>
+    </footer>
+</body>
+
+</html>

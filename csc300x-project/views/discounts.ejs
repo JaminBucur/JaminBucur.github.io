@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Create Discount</title>
+    <link rel="icon" type="image/x-icon" href="images/BBP_Logo.png">
+    <link rel="stylesheet" href="/public/style.css">
+</head>
+<body>
+    <header>
+        <%- include('partials/navbar') %>
+    </header>
+
+    <h1>Create Discount</h1>
+    <form action="/discounts/create" method="POST">
+        <label for="discountValue">Discount Value:</label>
+        <input type="number" id="discountValue" name="discountValue" step="0.01" required>
+        <label for="discountCaption">Discount Caption:</label>
+        <input type="text" id="discountCaption" name="discountCaption">
+        <button type="submit">Create Discount</button>
+    </form>
+
+    <h2>Existing Discounts:</h2>
+    <ul>
+        <% discounts.forEach(discount => { %>
+            <li>
+                <%= discount.discountCaption %> - <%= discount.discountValue %>
+                <form action="/discounts/delete/<%= discount.discountID %>" method="POST" style="display:inline;">
+                    <button type="submit">Delete</button>
+                </form>
+            </li>
+        <% }); %>
+    </ul>
+
+    <h1>Create Coupon Code</h1>
+    <form action="/coupon/create" method="POST">
+        <label for="code">Coupon Code:</label>
+        <input type="text" id="code" name="code" required>
+        <label for="codeValue">Coupon Value:</label>
+        <input type="number" id="codeValue" name="codeValue" step="0.01" required>
+        <label for="expirationDate">Expiration Date:</label>
+        <input type="date" id="expirationDate" name="expirationDate" required>
+        <button type="submit">Create Coupon</button>
+    </form>
+
+    <h2>Existing Coupon Codes:</h2>
+    <ul>
+        <% coupons.forEach(coupon => { %>
+            <li>
+                <%= coupon.code %> - Coupon Value: <%= (coupon.codeValue * 100) %>% off - Expires on: <%= coupon.expirationDate %>
+                <form action="/coupon/delete/<%= coupon.code %>" method="POST" style="display:inline;">
+                    <button type="submit">Delete</button>
+                </form>
+            </li>
+        <% }); %>
+    </ul>
+    
+    <footer>
+        <%- include('partials/footer') %>
+    </footer>
+
+</body>
+</html>

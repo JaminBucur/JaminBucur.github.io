@@ -1,0 +1,88 @@
+{
+    "products": [
+        {
+            "productName": "Mass Gainer Protein",
+            "description": "High-calorie mass gainer protein powder for bulking and muscle growth.",
+            "categoryID": 1,
+            "price": 49.99,
+            "image": "mass_gainer_protein.jpg",
+            "ingredients": "Whey protein concentrate, maltodextrin, creatine monohydrate",
+            "directions": "Mix two scoops with water or milk and consume immediately after exercise.",
+            "featured": 1,
+            "nutrition": {
+                "servings_per_container": 20,
+                "serving_size": "2 Scoops (100g)",
+                "calories": 400,
+                "total_fat": "2g",
+                "cholesterol": "40mg",
+                "sodium": "150mg",
+                "total_carbohydrates": "80g",
+                "sugars": "20g",
+                "protein": "30g"
+            }
+        },
+        {
+            "productName": "Whey Protein Isolate",
+            "description": "Pure whey protein isolate powder for lean muscle gains and recovery.",
+            "categoryID": 1,
+            "price": 59.99,
+            "image": "whey_protein_isolate.jpg",
+            "ingredients": "Whey protein isolate, natural flavors, sweeteners",
+            "directions": "Mix one scoop with water or milk and shake well.",
+            "featured": 0,
+            "nutrition": {
+                "servings_per_container": 30,
+                "serving_size": "1 Scoop (30g)",
+                "calories": 110,
+                "total_fat": "0g",
+                "cholesterol": "5mg",
+                "sodium": "50mg",
+                "total_carbohydrates": "1g",
+                "sugars": "0g",
+                "protein": "25g"
+            }
+        },
+        {
+            "productName": "Extreme Pump Pre-Workout",
+            "description": "High-stimulant pre-workout powder for extreme energy and focus.",
+            "categoryID": 2,
+            "price": 39.99,
+            "image": "preworkout_extreme_pump.jpg",
+            "ingredients": "Caffeine, beta-alanine, citrulline malate, taurine",
+            "directions": "Mix one scoop with water 20-30 minutes before exercise.",
+            "featured": 0,
+            "nutrition": {
+                "servings_per_container": 20,
+                "serving_size": "1 Scoop (15g)",
+                "calories": 5,
+                "total_fat": "0g",
+                "cholesterol": "0mg",
+                "sodium": "200mg",
+                "total_carbohydrates": "1g",
+                "sugars": "0g",
+                "protein": "0g"
+            }
+        },
+        {
+            "productName": "Pump & Focus Pre-Workout",
+            "description": "Nitric oxide booster pre-workout powder for pump and mental focus.",
+            "categoryID": 2,
+            "price": 34.99,
+            "image": "preworkout_pump_focus.jpg",
+            "ingredients": "L-arginine, L-citrulline, tyrosine, caffeine",
+            "directions": "Mix one scoop with water 20-30 minutes before exercise.",
+            "featured": 0,
+            "nutrition": {
+                "servings_per_container": 25,
+                "serving_size": "1 Scoop (20g)",
+                "calories": 10,
+                "total_fat": "0g",
+                "cholesterol": "0mg",
+                "sodium": "100mg",
+                "total_carbohydrates": "2g",
+                "sugars": "0g",
+                "protein": "0g"
+            }
+        }
+    ]
+}

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Edit Product</title>
+    <link rel="icon" type="image/x-icon" href="/images/BBP_Logo.png">
+    <link rel="stylesheet" href="/public/style.css">
+    <script src="/public/script.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <%- include('partials/navbar') %>
+    </header>
+    <main>
+        <form action="/editProduct/<%= product.productID %>" method="post" enctype="multipart/form-data">
+            <div class="product-details">
+                <div class="changeImageButton">
+                    <button type="button" onclick="previousImage()"><img src="/images/previousDeal.png"></button>
+                </div>
+                <% imageUrls.forEach(function(imageUrl, index) { %>
+                    <img src="/images/<%= imageUrl %>" alt="<%= product.name %>" class="product-image"
+                        style="<%= index === 0 ? 'display: block;' : 'display: none;' %>">
+                    <% }); %>
+
+                        <div class="changeImageButton">
+                            <button type="button" onclick="nextImage()"><img src="/images/nextDeal.png"
+                                    width="20"></button>
+                        </div>
+
+                        <div class="details">
+                            <h2><label for="productName"> Product Name: </label><input type="text" id="productName"
+                                    name="product[productName]" value="<%= product.productName %>"></h2>
+                            <p><label for="description">Description:</label><input type="text" id="description"
+                                    name="product[description]" value="<%= product.description %>"></p>
+
+                            <p>
+                                <label for="categoryID">Category:</label>
+                                <select id="categoryID" name="product[categoryID]">
+                                    <% categories.forEach(category=> { %>
+                                        <option value="<%= category.categoryID %>" <% if
+                                            (product.categoryID==category.categoryID) { %>selected<% } %>><%=
+                                                    category.categoryName %>
+                                        </option>
+                                        <% }); %>
+                                </select>
+                            </p>
+
+                            <p><label for="price">Price:</label>$<input type="number" step="0.01" id="price"
+                                    name="product[price]" value="<%= product.price %>"></p>
+                            <div class="product-images">
+                                Existing Images:
+                                <input type="text" id="existingImages" name="product[image]"
+                                    value="<%= product.image %>">
+                                <p>Upload New Images:</p>
+                                <input type="file" id="newImages" name="imageUpload" accept="image/*" multiple>
+                            </div>
+
+                            <p><label for="ingredients">Ingredients:</label><input type="text" id="ingredients"
+                                    name="product[ingredients]" value="<%= product.ingredients %>"></p>
+                            <p><label for="directions">Directions:</label><input type="text" id="directions"
+                                    name="product[directions]" value="<%= product.directions %>"></p>
+                            <p><label for="featured">Featured:</label><input type="number" id="featured"
+                                    name="product[featured]" value="<%= product.featured %>"></p>
+                            <input type="hidden" name="product[productID]" value="<%= product.productID %>">
+
+                            <label for="discountID">Applied Discount:</label>
+                            <select id="discountID" name="discountID">
+                                <% productDiscount.forEach(discounted=> { %>
+                                    <% if (discounted.productID==product.productID) { %>
+                                        <option value="<%= discounted.discountID %>" selected>
+                                            <%= discounted.discountCaption %>
+                                        </option>
+                                        <% }}); %>
+
+                                            <option name=discountID value="">No discount</option>
+
+                                            <% discounts.forEach(discount=> { %>
+                                                <option value="<%= discount.discountID %>">
+                                                    <%= discount.discountCaption %>
+                                                </option>
+                                                <% }); %>
+                            </select>
+                            <input type="hidden" name="productID" value="<%= product.productID %>">
+
+
+
+
+                        </div>
+            </div>
+
+            <div class="nutrition-details">
+                <div class="details">
+                    <h1>Nutrition</h1>
+                    <label for="servings_per_container">Servings Per Container:</label>
+                    <input type="number" id="servings_per_container" name="product[nutrition][servings_per_container]"
+                        value="<%= nutrition.servings_per_container != null ? nutrition.servings_per_container : '' %>"><br>
+
+                    <label for="serving_size">Serving Size:</label>
+                    <input type="text" id="serving_size" name="product[nutrition][serving_size]"
+                        value="<%= nutrition.serving_size != null ? nutrition.serving_size : '' %>"><br>
+
+                    <label for="calories">Calories:</label>
+                    <input type="number" id="calories" name="product[nutrition][calories]"
+                        value="<%= nutrition.calories != null ? nutrition.calories : '' %>"><br>
+
+                    <label for="total_fat">Total Fat:</label>
+                    <input type="text" id="total_fat" name="product[nutrition][total_fat]"
+                        value="<%= nutrition.total_fat != null ? nutrition.total_fat : '' %>"><br>
+
+                    <label for="cholesterol">Cholesterol:</label>
+                    <input type="text" id="cholesterol" name="product[nutrition][cholesterol]"
+                        value="<%= nutrition.cholesterol != null ? nutrition.cholesterol : '' %>"><br>
+
+                    <label for="sodium">Sodium:</label>
+                    <input type="text" id="sodium" name="product[nutrition][sodium]"
+                        value="<%= nutrition.sodium != null ? nutrition.sodium : '' %>"><br>
+
+                    <label for="total_carbohydrates">Total Carbohydrates:</label>
+                    <input type="text" id="total_carbohydrates" name="product[nutrition][total_carbohydrates]"
+                        value="<%= nutrition.total_carbohydrates != null ? nutrition.total_carbohydrates : '' %>"><br>
+
+                    <label for="sugars">Sugars:</label>
+                    <input type="text" id="sugars" name="product[nutrition][sugars]"
+                        value="<%= nutrition.sugars != null ? nutrition.sugars : '' %>"><br>
+
+                    <label for="protein">Protein:</label>
+                    <input type="text" id="protein" name="product[nutrition][protein]"
+                        value="<%= nutrition.protein != null ? nutrition.protein : '' %>"><br>
+                    <input type="hidden" name="product[nutrition][productID]" value="<%= product.productID %>">
+                </div>
+            </div>
+
+            <br><button type="submit">Save Changes</button>
+        </form>
+    </main>
+
+    <footer>
+        <%- include('partials/footer') %>
+    </footer>
+</body>
+
+</html>

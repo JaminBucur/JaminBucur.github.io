@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title><%= product.name %></title>
+    <link rel="stylesheet" href="/public/style.css">
+    <script src="/public/script.js" defer></script>
+
+</head>
+
+<body>
+    <header>
+        <%- include('partials/navbar') %>
+    </header>
+    <main>
+
+        <div class="product-details">
+            <div class="changeImageButton">
+                <button onclick="previousImage()"><img src="/images/previousDeal.png"></button>
+            </div>
+            <% imageUrls.forEach(function(imageUrl, index) { %>
+                <img src="/images/<%= imageUrl %>" alt="<%= product.name %>" class="product-image"
+                    style="<%= index === 0 ? 'display: block;' : 'display: none;' %>">
+                <% }); %>
+                    <div class="changeImageButton">
+                        <button onclick="nextImage()"><img src="/images/nextDeal.png" width="20"></button>
+                    </div>
+                    <div class="details">
+                        <h2>
+                            <%= product.productName %>
+                        </h2>
+                        <p>
+                            <%= product.description %>
+                        </p>
+                        <p>
+                            <% if (product.discountValue> 0) { %>
+                                <p>Discounted Price: $<%= (product.price - (product.discountValue *
+                                        product.price)).toFixed(2) %>
+                                </p>
+                                <p>Original Price: <del>$<%= product.price.toFixed(2) %></del></p>
+                                <% } else { %>
+                                    <p>Price: $<%= product.price.toFixed(2) %>
+                                    </p>
+                                    <% } %>
+                        </p>
+
+                        <% if (userType==='admin' ) { %>
+                            <form action="/edit/<%= product.productID %>" method="get">
+                                <button type="submit">Edit</button>
+                            </form>
+                            <% } else if (userType==='shopper' ) { %>
+                                <form action="/cart/add" method="post">
+                                    <button type="submit">Add to Cart</button>
+                                    <input type="hidden" name="productID" value="<%= product.productID %>">
+                                    <input type="hidden" name="quantity" value="1">
+                                </form>
+                                <% } else { %>
+                                    <form action="/login" method="get">
+                                        <button type="submit">Login to Add to Cart</button>
+                                    </form>
+                                    <% } %>
+                                        <p>Ingredients: <%= product.ingredients %>
+                                        </p>
+                    </div>
+        </div>
+
+        <div class="product-details">
+            <div class="details">
+                <h1>Nutrition</h1>
+                <p>Servings Per Container: <%= nutrition.servings_per_container %>
+                </p>
+                <p>Serving Size: <%= nutrition.serving_size %>
+                </p>
+                <p>Calories: <%= nutrition.calories %>
+                </p>
+                <p>Total Fat: <%= nutrition.total_fat %>
+                </p>
+                <p>Cholesterol: <%= nutrition.cholesterol %>
+                </p>
+                <p>Sodium: <%= nutrition.sodium %>
+                </p>
+                <p>Total Carbohydrates: <%= nutrition.total_carbohydrates %>
+                </p>
+                <p>Sugars: <%= nutrition.sugars %>
+                </p>
+                <p>Protein: <%= nutrition.protein %>
+                </p>
+            </div>
+            <div class="details">
+                <h1>Directions</h1>
+                <p>
+                    <%= product.directions %>
+                </p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <%- include('partials/footer') %>
+    </footer>
+</body>
+
+</html>

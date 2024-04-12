@@ -1,0 +1,321 @@
+header {
+    height: 20%;
+    background-color: #07394b;
+    background-size: contain;
+    color: white;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav a {
+    padding: 10px;
+}
+
+h1 {
+    background-color: black;
+    color: white;
+    text-align: center;
+    font: bold 40px impact;
+}
+
+.image-caption {
+    background-color: black;
+    color: white;
+}
+
+#deals {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+
+}
+
+#deals img {
+    display: block;
+    margin: 0 auto;
+}
+
+.image-caption {
+    text-align: center;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+.deal {
+    display: none;
+    animation-fill-mode: forwards;
+}
+
+.deal.active {
+    display: block;
+    animation: slideIn 1s;
+    animation-fill-mode: forwards;
+}
+
+.deal.leaving {
+    display: block;
+    animation: slideOut 1s;
+    animation-fill-mode: forwards;
+}
+
+
+h2 {
+    color: #07394b;
+    text-align: center;
+    font: bold 30px impact;
+}
+
+section {
+    height: 25%;
+    font: 20px sans-serif;
+}
+
+.dual-column {
+    width: 50%;
+    padding-left: 10%;
+}
+
+#dual-container {
+    height: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 8%;
+    background-color: #595959;
+}
+
+a:link,
+a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: black;
+    text-decoration: underline;
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    border: 10px solid #595959
+}
+
+.sort {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+}
+
+.sort select {
+    padding: 10px;
+}
+
+.cart {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border: 10px solid #07394b;
+}
+
+.small {
+    margin: 0 10px;
+    border: 1px solid black;
+    width: 72px;
+    height: 72px;
+}
+
+.medium {
+    margin: 0 10px;
+    border: 1px solid black;
+    width: 200px;
+    height: 200px;
+}
+
+.cart-total {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    border: 10px solid white;
+    padding: 10px;
+}
+
+.product-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 100px;
+}
+
+.product-details img {
+    width: 400px;
+    margin: 20px;
+}
+
+.product-details .details {
+    padding: 20px;
+    min-height: 400px;
+    flex: 1;
+}
+
+.changeImageButton button {
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.changeImageButton img {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.imageButton button {
+    border: none;
+    background: none;
+    outline: none;
+    cursor: pointer;
+}
+
+#saveEdits {
+    display: flex;
+    justify-content: right;
+}
+
+#login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    margin-left: 15%;
+    height: 100%;
+}
+
+.search-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.product {
+    width: 30%;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.product img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.product h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.product p {
+    margin-bottom: 10px;
+}
+
+.product button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.product button:hover {
+    background-color: #0056b3;
+}
+
+.product form {
+    margin-top: 10px;
+}
+
+.recipe-tile {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    display: inline-block;
+    width: 350px;
+}
+
+.recipe-img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.collapsible {
+    cursor: pointer;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border: none;
+    text-align: left;
+    outline: none;
+    width: 100%;
+    transition: 0.4s;
+}
+
+.content {
+    display: none;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+#recipe-form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+#search-recipes {
+    display: inline-block;
+    margin: 10px;
+}

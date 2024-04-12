@@ -1,0 +1,46 @@
+{
+    "products": [
+        {
+            "productName": "Product 1",
+            "description": "Description of Product 1",
+            "categoryID": 1,
+            "price": 19.99,
+            "image": "product1.jpg",
+            "ingredients": "Ingredient 1, Ingredient 2",
+            "directions": "Directions for Product 1",
+            "featured": 0,
+            "nutrition": {
+                "servings_per_container": 20,
+                "serving_size": "1 Scoop (30g)",
+                "calories": 100,
+                "total_fat": "5g",
+                "cholesterol": "10mg",
+                "sodium": "150mg",
+                "total_carbohydrates": "10g",
+                "sugars": "5g",
+                "protein": "20g"
+            }
+        },
+        {
+            "productName": "Product 2",
+            "description": "Description of Product 2",
+            "categoryID": 1,
+            "price": 29.99,
+            "image": "product2.jpg",
+            "ingredients": "Ingredient 3, Ingredient 4",
+            "directions": "Directions for Product 2",
+            "featured": 0,
+            "nutrition": {
+                "servings_per_container": 15,
+                "serving_size": "1 Scoop (30g)",
+                "calories": 120,
+                "total_fat": "6g",
+                "cholesterol": "15mg",
+                "sodium": "200mg",
+                "total_carbohydrates": "12g",
+                "sugars": "6g",
+                "protein": "25g"
+            }
+        }
+    ]
+}

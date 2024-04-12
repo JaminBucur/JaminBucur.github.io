@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>About Us</title>
+    <link rel="icon" type="image/x-icon" href="images/BBP_Logo.png">
+    <link rel="stylesheet" href="/public/style.css">
+</head>
+
+<body>
+    <header>
+        <%- include('partials/navbar') %>
+    </header>
+
+    <main>
+        <section class="bppue-signup">
+            <h1>Sign Up for Big Body Protein Ultra Elite</h1>
+            <p>Join BBP Ultra Elite to gain access to exclusive member benefits:</p>
+            <ul>
+                <li>Early access to new products</li>
+                <li>Member-only discounts</li>
+                <li>Free shipping on all orders</li>
+                <li>Priority customer service</li>
+            </ul>
+            <p>Sign up today to start enjoying the perks of being a BBP Ultra Elite member!</p>
+            <h2>How to Sign Up:</h2>
+            <ol>
+                <li>Make sure you are logged in</li>
+                <li>Click the "Sign Up" button below</li>
+                <p>It's as simple as that. That's it! You're now a BBP Ultra Elite member!</p>
+            </ol>
+            <div class="imageButton">
+                <form id="signupForm" action="/bbpue/signup" method="post">
+                    <button type="submit"><img src="images/sign-up-button.png" alt="Sign Up" width="200"></button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <%- include('partials/footer') %>
+    </footer>
+</body>
+
+</html>

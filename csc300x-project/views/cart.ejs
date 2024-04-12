@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Big Body Protein & Supplements</title>
+    <link rel="icon" type="image/x-icon" href="/images/BBP_Logo.png">
+    <link rel="stylesheet" href="/public/style.css">
+</head>
+<body>
+    <header>
+        <%- include('partials/navbar') %>
+    </header>
+    <main>
+        <h1>Shopping Cart</h1>
+        <% if (cartItems.length === 0) { %>
+            <h2>Your cart is empty. Add some items to your cart so you can checkout and get those gains!</h2>
+        <% } else { %>
+        
+        <% let subtotal = 0; %>
+        <% cartItems.forEach(item => { %>
+            <% if (item.quantity > 0) { %>
+                <div class="cart">
+                    <% const firstImage = item.image.split(',')[0].trim(); %>
+                    <img class="small" src="/images/<%= firstImage %>" alt="Product Image">
+                    <h2><%= item.productName %></h2>
+                    <% let itemPrice = item.discountValue > 0 ? (item.price - (item.discountValue * item.price)).toFixed(2) : item.price.toFixed(2); %>
+                    <p>$<%= itemPrice %></p>
+                    
+                    <form action="/cart/update/<%= item.productID %>" method="post">
+                        <button class="add" type="submit" name="quantity" value="<%= (item.quantity + 1) %>"><img src="/images/up.png" alt="up" width="20"></button>
+                        <p class="quantity"><%= item.quantity %></p>
+                        <input type="hidden" name="productID" value="<%= item.productID %>">
+                        <button class="remove" type="submit" name="quantity" value="<%= (item.quantity - 1) %>"><img src="/images/down.png" alt="down" width="20"></button>
+                    </form>
+                </div>
+                <% subtotal += itemPrice * item.quantity; %>
+            <% } %>
+        <% }); %>
+
+        <div class="cart-total">
+            <p id="subtotal">Subtotal: $<%= subtotal.toFixed(2) %></p>
+            <% const taxRate = 0.0675; // Example tax rate %>
+            <% const tax = subtotal * taxRate; %>
+            <p id="tax">Tax: $<%= tax.toFixed(2) %></p>
+            <% let deliveryFee = 0; %>
+            <% if (tier === 'bbpue') { %>
+                <% deliveryFee = 0; // Example delivery fee %>
+                <p id="delivery">(BBP Ultra Elite member) Free Delivery: $<%= deliveryFee.toFixed(2) %></p>
+            <% } else if (subtotal > 0) { %>
+                <% deliveryFee = 15; // Example delivery fee %>
+                <p id="delivery">Delivery Fee: $<%= deliveryFee.toFixed(2) %></p>
+            <% } %>
+            
+            
+            <% let discountAmount = 0; %>
+            <% if (discount > 0) { %>
+                <% discountAmount = subtotal * discount; %>
+                <p>Coupon Discount: -$<%= discountAmount.toFixed(2) %></p>
+            <% } else { %>
+                <form action="/cart/coupon" method="post">
+                    <button type="submit">Apply Coupon</button>
+                    <input type="text" name="code" placeholder="Enter coupon code">
+                </form>
+            <% } %>
+
+            <% const total = (subtotal + tax + deliveryFee) - discountAmount; %>
+            <p id="total">Total: $<%= total.toFixed(2) %></p>
+            <form action="/cart/checkout" method="post">
+                <button type="submit">Checkout</button>
+            </form>
+        </div>
+        <% } %>
+    </main>
+    <footer>
+        <%- include('partials/footer') %>
+    </footer>
+</body>
+</html>

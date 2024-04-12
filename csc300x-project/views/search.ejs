@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="/public/style.css">
+</head>
+
+<body>
+    <header>
+        <%- include('partials/navbar') %>
+    </header>
+
+    <main>
+        <h1>Search Results</h1>
+        <form action="/search" method="GET">
+            <input type="text" name="term" placeholder="Search products...">
+            <button type="submit">Search</button>
+        </form><br>
+
+        <div class="search-list">
+            <% if (products.length > 0) { %>
+                <% products.forEach(product => { %>
+                    <div class="product">
+                        <img src="/images/<%= product.image.split(',')[0].trim() %>" alt="Product Image" class="medium">
+                        <a href="/products/<%= product.productID %>">
+                            <h2><%= product.productName %></h2>
+                        </a>
+                        <% if (product.discountValue > 0) { %>
+                            <p>Discounted Price: $<%= (product.price - (product.discountValue * product.price)).toFixed(2) %></p>
+                            <p>Original Price: <del>$<%= product.price.toFixed(2) %></del></p>
+                        <% } else { %>
+                            <% if (product.price) { %>
+                                <p>Price: $<%= product.price.toFixed(2) %></p>
+                            <% } %>
+                        <% } %>
+                        <% if (userType === 'admin') { %>
+                            <form action="/edit/<%= product.productID %>" method="get">
+                                <button type="submit" style="color: black;">Edit</button>
+                            </form>
+                            <form action="/deleteProduct/<%= product.productID %>" method="post">
+                                <input type="hidden" name="productID" value="<%= product.productID %>">
+                                <button type="submit" style="color: red;">Delete Product</button>
+                            </form>
+                        <% }  else if (userType === 'shopper') { %>
+                            <form action="/cart/add" method="post">
+                                <button type="submit">Add to Cart</button>
+                                <input type="hidden" name="productID" value="<%= product.productID %>">
+                                <input type="hidden" name="quantity" value="1">
+                            </form>
+                        <% } else { %>
+                            <form action="/login" method="get">
+                                <button type="submit">Login to Add to Cart</button>
+                            </form>
+                        <% } %>
+                    </div>
+                <% }); %>
+            <% } else { %>
+                <p>No products found matching the search term.</p>
+            <% } %>
+        </div>
+    </main>
+
+    <footer>
+        <%- include('partials/footer') %>
+    </footer>
+
+</body>
+
+</html>

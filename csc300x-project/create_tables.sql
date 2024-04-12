@@ -1,8 +1,8 @@
 CREATE TABLE Users (
     userID INTEGER PRIMARY KEY AUTOINCREMENT,
     userCreated DATETIME DEFAULT CURRENT_TIMESTAMP,
-    username TEXT NOT NULL,
-    email TEXT NOT NULL,
+    username TEXT NOT NULL UNIQUE,
+    email TEXT NOT NULL UNIQUE,
     password TEXT NOT NULL,
     userType TEXT CHECK(userType IN ('admin', 'shopper')) NOT NULL,
 	tier TEXT CHECK (tier IN ('member', 'bbpue')) NOT NULL
@@ -16,29 +16,29 @@ CREATE TABLE Categories (
 
 CREATE TABLE Products (
     productID INTEGER PRIMARY KEY AUTOINCREMENT,
-    name TEXT NOT NULL,
-    description TEXT NOT NULL,
-	categoryID INTEGER NOT NULL,
-	price REAL NOT NULL,
-    image TEXT NOT NULL,
-    ingredients TEXT NOT NULL,
-	directions TEXT NOT NULL,
-    featured INTEGER CHECK(featured IN (0, 1)) NOT NULL DEFAULT 0,
+    productName TEXT,
+    description TEXT,
+	categoryID INTEGER,
+	price REAL,
+    image TEXT,
+    ingredients TEXT,
+	directions TEXT,
+    featured INTEGER CHECK(featured IN (0, 1)) DEFAULT 0,
     FOREIGN KEY (categoryID) REFERENCES Categories(categoryID)
 );
 
 CREATE TABLE Nutrition (
     nutritionID INTEGER PRIMARY KEY AUTOINCREMENT,
-    servings_per_container INTEGER NOT NULL,
-    serving_size TEXT NOT NULL,
-    calories INTEGER NOT NULL,
-    total_fat TEXT NOT NULL,
-    cholesterol TEXT NOT NULL,
-    sodium TEXT NOT NULL,
-    total_carbohydrates TEXT NOT NULL,
-    sugars TEXT NOT NULL,
-    protein TEXT NOT NULL,
-    productID TEXT NOT NULL,
+    servings_per_container INTEGER,
+    serving_size TEXT,
+    calories INTEGER,
+    total_fat TEXT,
+    cholesterol TEXT,
+    sodium TEXT,
+    total_carbohydrates TEXT,
+    sugars TEXT,
+    protein TEXT,
+    productID INTEGER,
     FOREIGN KEY (productID) REFERENCES Products(productID)
 );
 
@@ -61,11 +61,12 @@ CREATE TABLE CartProducts (
 
 CREATE TABLE Discounts (
     discountID INTEGER PRIMARY KEY AUTOINCREMENT,
-    discountValue REAL NOT NULL
+    discountValue REAL NOT NULL,
+    discountCaption TEXT
 );
 
 CREATE TABLE ProductDiscounts (
-    productID INTEGER NOT NULL,
+    productID INTEGER NOT NULL UNIQUE,
     discountID INTEGER NOT NULL,
     FOREIGN KEY (productID) REFERENCES Products(productID),
     FOREIGN KEY (discountID) REFERENCES Discounts(discountID)
@@ -73,7 +74,6 @@ CREATE TABLE ProductDiscounts (
 
 CREATE TABLE CouponCodes (
     code TEXT PRIMARY KEY,
-    discountID INTEGER NOT NULL,
-    expirationDate DATETIME,
-    FOREIGN KEY (discountID) REFERENCES Discounts(discountID)
+    codeValue REAL NOT NULL,
+    expirationDate DATETIME
 );

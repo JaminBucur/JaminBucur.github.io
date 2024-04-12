@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Recipe Search Results</title>
+    <link rel="icon" type="image/x-icon" href="/images/BBP_Logo.png">
+    <link rel="stylesheet" href="/public/style.css">
+    <script src="/public/script.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <%- include('partials/navbar') %>
+    </header>
+    <main>
+        <h2>At Big Body Protein, we believe that a healthy lifestyle starts with a balanced diet.
+            That's why we've partnered with <a href="https://www.themealdb.com/" target="_blank"
+                style="color: rgb(4, 11, 154);">The Meal DB</a>
+            to provide you with a variety of delicious recipes to try at home. Use the search bar below to find recipes
+            based on your favorite ingredients or dietary preferences.</h2>
+
+        <form id="recipe-form" action="/recipes" method="GET">
+            <label for="search-recipes">
+                <h2>Search recipes:</h2>
+            </label>
+            <input type="text" id="search-recipes" name="term" placeholder="Enter keyword...">
+            <button type="submit">Search</button>
+        </form>
+
+        <h1>Recipe Search Results</h1>
+        <div class="recipe-container">
+            <% if (meals) { %>
+                <% meals.forEach(meal=> { %>
+                    <div class="recipe-tile">
+                        <h2>
+                            <%= meal.strMeal %>
+                        </h2>
+                        <img class="recipe-img" src="<%= meal.strMealThumb %>" alt="<%= meal.strMeal %>">
+                        <p><strong>Category:</strong>
+                            <%= meal.strCategory %>
+                        </p>
+                        <p><strong>Area:</strong>
+                            <%= meal.strArea %>
+                        </p>
+                        <button class="collapsible">Instructions</button>
+                        <div class="content">
+                            <p><strong>Instructions:</strong></p>
+                            <p>
+                                <%= meal.strInstructions %>
+                            </p>
+                        </div>
+                        <button class="collapsible">Ingredients</button>
+                        <div class="content">
+                            <p><strong>Ingredients:</strong></p>
+                            <ul>
+                                <% for (let i=1; i <=20; i++) { let ingredient=meal['strIngredient' + i]; let
+                                    measure=meal['strMeasure' + i]; if (ingredient && measure) { %>
+                                    <li>
+                                        <%= measure %>
+                                            <%= ingredient %>
+                                    </li>
+                                    <% } } %>
+                            </ul>
+                        </div>
+                        <% if (meal.strYoutube) { %>
+                            <p><a href="<%= meal.strYoutube %>" target="_blank" style="color: rgb(4, 11, 154);">Watch
+                                    Video</a></p>
+                            <% } %>
+                                <p><a href="<%= meal.strSource %>" target="_blank"
+                                        style="color: rgb(4, 11, 154);">Source</a></p>
+                    </div>
+                    <% }); %>
+                        <% } else { %>
+                            <p>No recipes found. Please try another search term.</p>
+                            <% } %>
+        </div>
+    </main>
+    <footer>
+        <%- include('partials/footer') %>
+    </footer>
+</body>
+
+</html>

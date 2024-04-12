@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Bulk Upload</title>
+    <link rel="icon" type="image/x-icon" href="images/BBP_Logo.png">
+    <link rel="stylesheet" href="/public/style.css">
+    <script src="/public/script.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <%- include('partials/navbar') %>
+    </header>
+    <main>
+        <div class="bulkUpload">
+            <form id="uploadForm" action="/uploadProducts" method="post" enctype="multipart/form-data">
+                <h1>Bulk Upload</h1>
+                <p>Select a file to upload:</p>
+                <input type="file" id="file" name="file" accept=".json, .txt" onchange="handleFileSelect(event)">
+                <p>Accepted file formats: JSON or TXT</p>
+                <input type="hidden" id="products" name="products">
+                <button type="submit" id="submitButton" disabled>Upload File</button>
+                <p>Example file format:</p>
+                <pre>
+{
+    "products": [
+        {
+            "productName": "Product 1",
+            "description": "Description of Product 1",
+            "categoryID": 1,
+            "price": 19.99,
+            "image": "product1.jpg",
+            "ingredients": "Ingredient 1, Ingredient 2",
+            "directions": "Directions for Product 1",
+            "featured": 0,
+            "nutrition": {
+                "servings_per_container": 20,
+                "serving_size": "1 Scoop (30g)",
+                "calories": 100,
+                "total_fat": "5g",
+                "cholesterol": "10mg",
+                "sodium": "150mg",
+                "total_carbohydrates": "10g",
+                "sugars": "5g",
+                "protein": "20g"
+            }
+        },
+        {
+            "productName": "Product 2",
+            "description": "Description of Product 2",
+            "categoryID": 1,
+            "price": 29.99,
+            "image": "product2.jpg",
+            "ingredients": "Ingredient 3, Ingredient 4",
+            "directions": "Directions for Product 2",
+            "featured": 0,
+            "nutrition": {
+                "servings_per_container": 15,
+                "serving_size": "1 Scoop (30g)",
+                "calories": 120,
+                "total_fat": "6g",
+                "cholesterol": "15mg",
+                "sodium": "200mg",
+                "total_carbohydrates": "12g",
+                "sugars": "6g",
+                "protein": "25g"
+            }
+        }
+    ]
+}
+                </pre>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <%- include('partials/footer') %>
+    </footer>
+
+</body>
+
+</html>

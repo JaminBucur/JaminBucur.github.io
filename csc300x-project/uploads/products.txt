@@ -1,0 +1,214 @@
+{
+    "products": [
+        {
+            "productName": "Whey Protein Powder",
+            "description": "Premium whey protein powder for muscle growth and recovery.",
+            "categoryID": 1,
+            "price": 39.99,
+            "image": "whey_protein.jpg",
+            "ingredients": "Whey protein isolate, natural flavors, sweeteners",
+            "directions": "Mix one scoop with water or milk and shake well.",
+            "featured": 1,
+            "nutrition": {
+                "servings_per_container": 30,
+                "serving_size": "1 Scoop (30g)",
+                "calories": 120,
+                "total_fat": "1g",
+                "cholesterol": "30mg",
+                "sodium": "50mg",
+                "total_carbohydrates": "3g",
+                "sugars": "2g",
+                "protein": "25g"
+            }
+        },
+        {
+            "productName": "Pre-Workout Energizer",
+            "description": "Get pumped and energized for your workout with this pre-workout supplement.",
+            "categoryID": 2,
+            "price": 29.99,
+            "image": "preworkout.jpg",
+            "ingredients": "Caffeine, beta-alanine, creatine monohydrate",
+            "directions": "Mix one scoop with water 20-30 minutes before exercise.",
+            "featured": 0,
+            "nutrition": {
+                "servings_per_container": 20,
+                "serving_size": "1 Scoop (15g)",
+                "calories": 10,
+                "total_fat": "0g",
+                "cholesterol": "0mg",
+                "sodium": "150mg",
+                "total_carbohydrates": "2g",
+                "sugars": "0g",
+                "protein": "0g"
+            }
+        },
+        {
+            "productName": "Multivitamin Tablets",
+            "description": "Comprehensive multivitamin tablets for overall health and wellness.",
+            "categoryID": 3,
+            "price": 19.99,
+            "image": "multivitamin.jpg",
+            "ingredients": "Vitamins A, B, C, D, E, minerals",
+            "directions": "Take one tablet daily with a meal.",
+            "featured": 1,
+            "nutrition": {
+                "servings_per_container": 60,
+                "serving_size": "1 Tablet",
+                "calories": 5,
+                "total_fat": "0g",
+                "cholesterol": "0mg",
+                "sodium": "0mg",
+                "total_carbohydrates": "1g",
+                "sugars": "0g",
+                "protein": "0g"
+            }
+        },
+        {
+            "productName": "Casein Protein Powder",
+            "description": "Slow-digesting casein protein powder for overnight muscle recovery.",
+            "categoryID": 1,
+            "price": 49.99,
+            "image": "casein_protein.jpg",
+            "ingredients": "Micellar casein, natural flavors, sweeteners",
+            "directions": "Mix one scoop with water or milk before bedtime.",
+            "featured": 0,
+            "nutrition": {
+                "servings_per_container": 25,
+                "serving_size": "1 Scoop (35g)",
+                "calories": 130,
+                "total_fat": "1g",
+                "cholesterol": "35mg",
+                "sodium": "60mg",
+                "total_carbohydrates": "4g",
+                "sugars": "1g",
+                "protein": "30g"
+            }
+        },
+        {
+            "productName": "BCAA Powder",
+            "description": "Branch-chain amino acid powder for muscle recovery and endurance.",
+            "categoryID": 2,
+            "price": 24.99,
+            "image": "bcaa_powder.jpg",
+            "ingredients": "Leucine, isoleucine, valine, natural flavors",
+            "directions": "Mix one scoop with water and drink during exercise.",
+            "featured": 1,
+            "nutrition": {
+                "servings_per_container": 40,
+                "serving_size": "1 Scoop (10g)",
+                "calories": 0,
+                "total_fat": "0g",
+                "cholesterol": "0mg",
+                "sodium": "5mg",
+                "total_carbohydrates": "0g",
+                "sugars": "0g",
+                "protein": "0g"
+            }
+        },
+        {
+            "productName": "Omega-3 Fish Oil Capsules",
+            "description": "Essential fatty acids for heart health and inflammation reduction.",
+            "categoryID": 3,
+            "price": 14.99,
+            "image": "fish_oil.jpg",
+            "ingredients": "Fish oil, gelatin, glycerin, purified water",
+            "directions": "Take one capsule daily with a meal.",
+            "featured": 0,
+            "nutrition": {
+                "servings_per_container": 90,
+                "serving_size": "1 Capsule",
+                "calories": 10,
+                "total_fat": "1g",
+                "cholesterol": "10mg",
+                "sodium": "0mg",
+                "total_carbohydrates": "0g",
+                "sugars": "0g",
+                "protein": "0g"
+            }
+        },
+        {
+            "productName": "Creatine Monohydrate Powder",
+            "description": "Pure creatine monohydrate powder for strength and muscle gains.",
+            "categoryID": 1,
+            "price": 19.99,
+            "image": "creatine_powder.jpg",
+            "ingredients": "Creatine monohydrate",
+            "directions": "Mix one scoop with water or juice and drink immediately.",
+            "featured": 0,
+            "nutrition": {
+                "servings_per_container": 100,
+                "serving_size": "1 Scoop (5g)",
+                "calories": 0,
+                "total_fat": "0g",
+                "cholesterol": "0mg",
+                "sodium": "0mg",
+                "total_carbohydrates": "0g",
+                "sugars": "0g",
+                "protein": "0g"
+            }
+        },
+        {
+            "productName": "Vitamin D3 Supplement",
+            "description": "Vitamin D3 supplement for bone health and immune support.",
+            "categoryID": 3,
+            "price": 9.99,
+            "image": "vitamin_d3.jpg",
+            "ingredients": "Vitamin D3, olive oil, gelatin, glycerin, purified water",
+            "directions": "Take one softgel daily with a meal.",
+            "featured": 0,
+            "nutrition": {
+                "servings_per_container": 120,
+                "serving_size": "1 Softgel",
+                "calories": 10,
+                "total_fat": "1g",
+                "cholesterol": "0mg",
+                "sodium": "0mg",
+                "total_carbohydrates": "0g",
+                "sugars": "0g",
+                "protein": "0g"
+            }
+        },
+        {
+            "productName": "Glutamine Powder",
+            "description": "Pure L-glutamine powder for muscle recovery and immune support.",
+            "categoryID": 1,
+            "price": 34.99,
+            "image": "glutamine_powder.jpg",
+            "ingredients": "L-glutamine",
+            "directions": "Mix one scoop with water or juice and consume immediately after exercise.",
+            "featured": 1,
+            "nutrition": {
+                "servings_per_container": 50,
+                "serving_size": "1 Scoop (5g)",
+                "calories": 20,
+                "total_fat": "0g",
+                "cholesterol": "0mg",
+                "sodium": "0mg",
+                "total_carbohydrates": "0g",
+                "sugars": "0g",
+                "protein": "5g"
+            }
+        },
+        {
+            "productName": "ZMA Capsules",
+            "description": "Zinc, magnesium, and vitamin B6 capsules for sleep and recovery.",
+            "categoryID": 3,
+            "price": 24.99,
+            "image": "zma_capsules.jpg",
+            "ingredients": "Zinc, magnesium, vitamin B6",
+            "directions": "Take 3 capsules daily, preferably on an empty stomach before bedtime.",
+            "featured": 0,
+            "nutrition": {
+                "servings_per_container": 30,
+                "serving_size": "3 Capsules",
+                "calories": 5,
+                "total_fat": "0g",
+                "cholesterol": "0mg",
+                "sodium": "0mg",
+                "total_carbohydrates": "1g",
+                "sugars": "0g",
+                "protein": "0g"
+            }
+        }
+    ]
+}

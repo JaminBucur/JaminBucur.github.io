@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Big Body Protein & Supplements</title>
+    <link rel="icon" type="image/x-icon" href="/images/BBP_Logo.png">
+    <link rel="stylesheet" href="/public/style.css">
+    <script src="/public/script.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <%- include('partials/navbar') %>
+    </header>
+    <main>
+        <div class="categories">
+            <h2 style="text-align: left;">Categories:</h2>
+            <form id="categoryForm" action="/products/sort" method="post">
+                <select id="categorySelect" name="category">
+                    <option value="">All Categories</option>
+                    <% categories.forEach(category => { %>
+                        <option value="<%= category.categoryID %>" <% if (lastCategory == category.categoryID) { %>selected<% } %>><%= category.categoryName %></option>
+                    <% }); %>
+                </select>
+                <input type="hidden" name="sortBy" value="<%= lastSortBy %>">
+            </form>
+        </div>
+
+        <% if (userType === 'admin') { %>
+            <div class="create-category">
+                <h3>Create New Category:</h3>
+                <form id="createCategoryForm" action="/categories/create" method="post">
+                    <label for="newCategoryName">Category Name:</label>
+                    <input type="text" id="newCategoryName" name="categoryName" required>
+                    <label for"menuOrder">Menu Order:</label>
+                    <input type="number" id="menuOrder" name="menuOrder" required>
+                    <button type="submit">Create Category</button>
+                </form>
+            </div>
+            <div class="remove-category">
+                <h3>Remove Category:</h3>
+                <form id="removeCategoryForm" action="/categories/delete" method="post">
+                    <select id="removeCategorySelect" name="categoryID">
+                        <option value="">Select Category</option>
+                        <% categories.forEach(category => { %>
+                            <option value="<%= category.categoryID %>"><%= category.categoryName %></option>
+                        <% }); %>
+                    </select>
+                    <button type="submit">Remove Category</button>
+                </form>
+            </div>
+            <div class="create-product">
+                <h3>Create New Product:</h3>
+                <form id="createProductForm" action="/addProduct" method="post">
+                    <button type="submit">Create Product</button>
+                </form>
+        <% } %>
+
+        <div class="sort">
+            <h3>Sort By:</h3>
+            <form id="sortForm" action="/products/sort" method="post">
+                <br><select id="sortSelect" name="sortBy">
+                    <option value="">Default</option>
+                    <option value="price ASC" <% if(lastSortBy === 'price ASC') { %>selected<% } %>>Price (Low to High)</option>
+                    <option value="price DESC" <% if(lastSortBy === 'price DESC') { %>selected<% } %>>Price (High to Low)</option>
+                    <option value="productName ASC" <% if(lastSortBy === 'productName ASC') { %>selected<% } %>>Name (A to Z)</option>
+                    <option value="productName DESC" <% if(lastSortBy === 'productName DESC') { %>selected<% } %>>Name (Z to A)</option>
+                </select>
+                <input type="hidden" name="category" value="<%= lastCategory %>">
+            </form>
+        </div>
+
+        <div class="search-list"></div>
+        <% Products.forEach(product => { %>
+            <div class="product-list">
+
+                <% let firstImage = 'no-image.png'; %>
+                <% if (product.image) { %>
+                    <% firstImage = product.image.split(',')[0].trim(); %>
+                <% } %>
+
+                <img class="medium" src="/images/<%= firstImage %>" alt="Product Image">
+                <a href="/products/<%= product.productID %>">
+                    <h2>
+                        <%= product.productName %>
+                    </h2>
+                </a>
+                <p><% if (product.discountValue > 0) { %>
+                    <p>Discounted Price: $<%= (product.price - (product.discountValue * product.price)).toFixed(2) %></p>
+                    <p>Original Price: <del>$<%= product.price.toFixed(2) %></del></p>
+                <% } else { %>
+                    <% if (product.price) { %>
+                        <p>Price: $<%= product.price.toFixed(2) %></p>
+                    <% } %>
+                <% } %>
+                </p>
+                <% if (userType === 'admin') { %>
+                    <form action="/edit/<%= product.productID %>" method="get">
+                        <button type="submit">Edit</button>
+                    </form>
+                    <form action="/deleteProduct/<%= product.productID %>" method="post">
+                        <input type="hidden" name="productID" value="<%= product.productID %>">
+                        <button type="submit" style="color: red;">Delete Product</button>
+                    </form>
+                <% } else if (userType === 'shopper') { %>
+                    <form action="/cart/add" method="post">
+                        <button type="submit">Add to Cart</button>
+                        <input type="hidden" name="productID" value="<%= product.productID %>">
+                        <input type="hidden" name="quantity" value="1">
+                    </form>
+                <% } else { %>
+                    <form action="/login" method="get">
+                        <button type="submit">Login to Add to Cart</button>
+                    </form>
+                <% } %>
+                <br>
+                </div>
+        <% }); %></div>
+    </main>
+    <footer>
+        <%- include('partials/footer') %>
+    </footer>
+        
+</body>
+
+</html>
